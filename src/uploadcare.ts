@@ -1,6 +1,10 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 
+import { UploadcareFilesWrapper } from './files/files.class';
+
 export class Uploadcare {
+
+    files: UploadcareFilesWrapper;
 
     private http: AxiosInstance;
 
@@ -28,5 +32,7 @@ export class Uploadcare {
 
         this.http.defaults.headers.post['Content-Type']
             = 'application/x-www-form-urlencoded';
+
+        this.files = new UploadcareFilesWrapper(this.http);
     }
 }

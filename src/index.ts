@@ -1,0 +1,1 @@
+export { Uploadcare } from './uploadcare';

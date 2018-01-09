@@ -15,9 +15,9 @@ declare module 'uploadcare-rest' {
 
         /**
          * Store the image.
-         * @default auto
+         * @default undefined The default project store method will be used
          */
-        store?: 'auto' | 0 | 1;
+        store?: boolean;
     }
 
     export interface ImageInfo {

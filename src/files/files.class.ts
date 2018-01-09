@@ -1,5 +1,6 @@
 import { AxiosInstance, AxiosPromise } from 'axios';
 
+import { UploadImageResult } from '../uploadcare.interface';
 import {
     CopyOptions,
     CopyResult,
@@ -23,6 +24,14 @@ export class UploadcareFilesWrapper {
             ...options,
             source,
         });
+    }
+
+    /**
+     * Removes a file by UUID.
+     * @param id The UUID of the file to delete.
+     */
+    remove(id: string): AxiosPromise<UploadImageResult> {
+        return this.http.delete(`/files/${id}/`);
     }
 
     /**

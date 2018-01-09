@@ -58,6 +58,12 @@ declare module 'uploadcare-rest' {
         copy(source: string, options?: CopyOptions): AxiosPromise<CopyResult>;
 
         /**
+         * Removes a file by UUID.
+         * @param id The UUID of the file to delete.
+         */
+        remove(id: string): AxiosPromise<UploadImageResult>
+
+        /**
          * Stores files. Maximum 100, see Uploadcare documentation.
          * https://uploadcare.com/documentation/rest/#files-storage
          * @param files An array containing the UUIDs of the files to store.

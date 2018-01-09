@@ -56,6 +56,13 @@ declare module 'uploadcare-rest' {
          * @param source Either CDN URL or UUID.
          */
         copy(source: string, options?: CopyOptions): AxiosPromise<CopyResult>;
+
+        /**
+         * Stores files. Maximum 100, see Uploadcare documentation.
+         * https://uploadcare.com/documentation/rest/#files-storage
+         * @param files An array containing the UUIDs of the files to store.
+         */
+        store(files: Array<string>): AxiosPromise<StoreResult>;
     }
 
     export interface CopyOptions extends Storable {
@@ -66,5 +73,17 @@ declare module 'uploadcare-rest' {
     export interface CopyResult {
         type: 'file' | 'url';
         result: UploadImageResult | string;
+    }
+
+    export interface StoreResult {
+
+        /**
+         * Contains problems, if any.
+         * The key contains the UUID of the file that ecountered a problem.
+         * The value describes the problem.
+         */
+        problems?: {[key: string]: string};
+        result: Array<UploadImageResult>;
+        status: string;
     }
 }

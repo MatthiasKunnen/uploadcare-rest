@@ -2,7 +2,7 @@ import { AxiosInstance, AxiosPromise } from 'axios';
 
 import {
     CopyOptions,
-    UploadFromUrlResult,
+    CopyResult,
 } from './files.interface';
 
 /**
@@ -17,8 +17,8 @@ export class UploadcareFilesWrapper {
      * Copy an uploaded file to a specified storage.
      * @param source Either CDN URL or UUID.
      */
-    copy(source: string, options?: CopyOptions): AxiosPromise<UploadFromUrlResult> {
-        return this.http.post<UploadFromUrlResult>('/files/', {
+    copy(source: string, options?: CopyOptions): AxiosPromise<CopyResult> {
+        return this.http.post<CopyResult>('/files/', {
             ...options,
             source,
         });

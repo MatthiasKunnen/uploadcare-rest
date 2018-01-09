@@ -8,7 +8,7 @@ export interface CopyOptions extends Storable {
     pattern?: string;
 }
 
-export interface UploadFromUrlResult {
+export interface CopyResult {
     type: 'file' | 'url';
     result: UploadImageResult | string;
 }

@@ -55,7 +55,7 @@ declare module 'uploadcare-rest' {
          * Copy an uploaded file to a specified storage.
          * @param source Either CDN URL or UUID.
          */
-        copy(source: string, options?: CopyOptions): AxiosPromise<UploadFromUrlResult>;
+        copy(source: string, options?: CopyOptions): AxiosPromise<CopyResult>;
     }
 
     export interface CopyOptions extends Storable {
@@ -63,7 +63,7 @@ declare module 'uploadcare-rest' {
         pattern?: string;
     }
 
-    export interface UploadFromUrlResult {
+    export interface CopyResult {
         type: 'file' | 'url';
         result: UploadImageResult | string;
     }

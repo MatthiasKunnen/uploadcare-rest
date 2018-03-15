@@ -30,6 +30,10 @@ if (image.type === 'file') {
     const result = <UploadImageResult>image.result;
 
     // Store the copied file (necessary when Auto store is disallowed)
-    await uploader.files.store([result.uuid]);
+    const storeResult = await uploader.files.store([result.uuid]);
+
+    if (Object.keys(storeResult.problems).length > 0) {
+        console.error(storeResult.problems);
+    }
 }
 ```

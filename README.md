@@ -28,12 +28,5 @@ const image = response.data;
 if (image.type === 'file') {
     // Type cast for TypeScript only
     const result = <UploadImageResult>image.result;
-
-    // Store the copied file (necessary when Auto store is disallowed)
-    const storeResult = await uploader.files.store([result.uuid]);
-
-    if (Object.keys(storeResult.problems).length > 0) {
-        console.error(storeResult.problems);
-    }
 }
 ```

@@ -1,19 +1,22 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 
 import { UploadcareFilesWrapper } from './files/files.class';
+import { UploadWrapper } from './upload/upload.class';
 
 export class Uploadcare {
 
-    files: UploadcareFilesWrapper;
+    readonly files: UploadcareFilesWrapper;
+    readonly upload: UploadWrapper;
 
-    private http: AxiosInstance;
+    private readonly http: AxiosInstance;
+    private readonly httpUpload: AxiosInstance;
 
     constructor(
         publicKey: string,
         privateKey: string,
         axiosConfig: Partial<AxiosRequestConfig> = {},
     ) {
-        this.http = axios.create({
+        axiosConfig = {
             // 60 seconds timeout
             timeout: 60000,
 
@@ -24,7 +27,9 @@ export class Uploadcare {
             maxContentLength: 50 * 1000 * 1000,
 
             ...axiosConfig,
-        });
+        };
+
+        this.http = axios.create(axiosConfig);
 
         this.http.defaults.baseURL = 'https://api.uploadcare.com';
         this.http.defaults.headers.common['Authorization']
@@ -34,5 +39,13 @@ export class Uploadcare {
             = 'application/x-www-form-urlencoded';
 
         this.files = new UploadcareFilesWrapper(this.http);
+
+        this.httpUpload = axios.create(axiosConfig);
+        this.httpUpload.defaults.baseURL = 'https://upload.uploadcare.com/';
+        this.httpUpload.defaults.params = {
+            pub_key: publicKey,
+        };
+
+        this.upload = new UploadWrapper(this.httpUpload);
     }
 }

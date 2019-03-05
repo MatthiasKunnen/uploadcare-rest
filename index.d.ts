@@ -1,12 +1,13 @@
 declare module 'uploadcare-rest' {
-    import { AxiosRequestConfig, AxiosInstance, AxiosPromise } from 'axios';
+    import { AxiosInstance, AxiosPromise, AxiosRequestConfig } from 'axios';
 
     export class Uploadcare {
         files: UploadcareFilesWrapper;
         private http;
+
         constructor(
-            publicKey: string, 
-            privateKey: string, 
+            publicKey: string,
+            privateKey: string,
             axiosConfig?: Partial<AxiosRequestConfig>,
         );
     }
@@ -61,7 +62,7 @@ declare module 'uploadcare-rest' {
          * Removes a file by UUID.
          * @param id The UUID of the file to delete.
          */
-        remove(id: string): AxiosPromise<UploadImageResult>
+        remove(id: string): AxiosPromise<UploadImageResult>;
 
         /**
          * Stores files. Maximum 100, see Uploadcare documentation.

@@ -13,7 +13,8 @@ The methods will be implemented gradually.
 - remove
 - store
 
-## Example
+**Example**
+
 ```TypeScript
 const uploader = new Uploadcare(
     config.uploadcare.publicKey,
@@ -29,4 +30,21 @@ if (image.type === 'file') {
     // Type cast for TypeScript only
     const result = <UploadImageResult>image.result;
 }
+```
+
+### Upload
+- [From URL](https://uploadcare.com/docs/api_reference/upload/from_url/)
+
+**Example**
+
+```TypeScript
+const uploader = new Uploadcare(
+    config.uploadcare.publicKey,
+    config.uploadcare.privateKey,
+);
+
+const file = await uploader.upload.awaitFromUrl('https://picsum.photos/200/300/?random');
+// That's all, the library takes care of checking the upload progress
+// If you're not interested in waiting for the file, use the following
+const idc = await uploader.upload.fromUrl('https://picsum.photos/200/300/?random');
 ```

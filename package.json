@@ -14,7 +14,7 @@
         "build": "tsc -p tsconfig.json",
         "build-prod": "tsc -p tsconfig.production.json",
         "precommit": "bash linter.sh",
-        "prepublishOnly": "npm run build-prod",
+        "prepublishOnly": "rm -rf ./lib && npm run build-prod",
         "prepush": "bash linter.sh",
         "ts-lint": "tslint -p tsconfig.json"
     },

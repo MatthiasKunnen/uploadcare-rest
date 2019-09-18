@@ -1,5 +1,5 @@
 # Uploadcare Rest
-[![npm version](https://img.shields.io/npm/v/uploadcare-rest.svg?style=for-the-badge)](https://www.npmjs.com/package/uploadcare-rest)
+[![npm version](https://img.shields.io/npm/v/uploadcare-rest.svg?logo=npm&style=for-the-badge)](https://www.npmjs.com/package/uploadcare-rest)
 
 This is a wrapper around the API made available by uploadcare.
 The library is written in TypeScript and has typings available.

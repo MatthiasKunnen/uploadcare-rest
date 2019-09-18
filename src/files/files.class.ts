@@ -12,7 +12,9 @@ import {
  */
 export class UploadcareFilesWrapper {
 
-    constructor(private http: AxiosInstance) {
+    constructor(
+        private readonly http: AxiosInstance,
+    ) {
     }
 
     /**

@@ -20,8 +20,10 @@ export class Uploadcare {
             // 60 seconds timeout
             timeout: 60000,
 
-            // Follow up to 10 HTTP 3xx redirects
-            maxRedirects: 10,
+            // Prevent loading whole stream into memory, see
+            // https://github.com/axios/axios/issues/1045
+            // Also, redirects have lead to some vulnerabilities in Axios.
+            maxRedirects: 0,
 
             // Maximum content length 50MBs
             maxContentLength: 50 * 1000 * 1000,

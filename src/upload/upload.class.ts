@@ -1,6 +1,6 @@
 import { AxiosInstance, AxiosPromise } from 'axios';
 
-import { sleep } from '../util';
+import { sleep } from '../util.js';
 import {
     FromUrlFileResponse,
     FromUrlOptions,
@@ -8,7 +8,7 @@ import {
     FromUrlStatusResponse,
     FromUrlStatusSuccessResponse,
     StoreEnum,
-} from './upload.interface';
+} from './upload.interface.js';
 
 const defaultFromUrlOptions: FromUrlOptions = {
     store: StoreEnum.Auto,

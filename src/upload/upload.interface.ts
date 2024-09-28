@@ -1,4 +1,4 @@
-import { ImageInfo } from '../uploadcare.interface';
+import type { ImageInfo } from '../uploadcare.interface.js';
 
 export enum StoreEnum {
     NoStore = 0,

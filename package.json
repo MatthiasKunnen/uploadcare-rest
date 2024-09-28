@@ -1,34 +1,38 @@
 {
     "name": "uploadcare-rest",
+    "type": "module",
     "version": "1.2.1",
     "description": "A node library to execute Uploadcare's REST requests",
     "author": "Matthias Kunnen",
-    "main": "lib/index.js",
-    "types": "index.d.ts",
+    "main": "lib/cjs/index.js",
+    "module": "lib/index.js",
+    "types": "lib/index.d.ts",
     "license": "MIT",
     "repository": {
         "type": "git",
         "url": "https://github.com/MatthiasKunnen/uploadcare-rest.git"
     },
     "scripts": {
-        "build": "tsc -p tsconfig.json",
-        "build-prod": "tsc -p tsconfig.production.json",
+        "build": "rm -rf ./lib && tsc -p tsconfig.esm.json && tsc -p tsconfig.cjs.json && cp pkg.cjs.json lib/cjs/package.json",
         "precommit": "bash linter.sh",
-        "prepublishOnly": "rm -rf ./lib && npm run build-prod",
+        "prepublishOnly": "npm run build",
         "prepush": "bash linter.sh",
         "ts-lint": "tslint -p tsconfig.json"
     },
     "dependencies": {
-        "@types/node": "^6.0.92",
-        "axios": "^0.19.0"
+        "axios": "^1.7.7"
     },
     "devDependencies": {
+        "@types/node": "^18.0.0",
         "husky": "^0.14.3",
         "tslint": "^5.11.0",
-        "typescript": "^2.4.2"
+        "typescript": "~5.6.2"
+    },
+    "engines": {
+        "node": ">=18.0.0"
     },
     "files": [
         "/lib",
-        "/index.d.ts"
+        "/src"
     ]
 }

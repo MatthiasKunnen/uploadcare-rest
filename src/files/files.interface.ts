@@ -1,7 +1,7 @@
-import {
+import type {
     Storable,
     UploadImageResult,
-} from '../uploadcare.interface';
+} from '../uploadcare.interface.js';
 
 export interface CopyOptions extends Storable {
     make_public?: string;

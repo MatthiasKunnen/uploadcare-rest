@@ -1,7 +1,7 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 
-import { UploadcareFilesWrapper } from './files/files.class';
-import { UploadWrapper } from './upload/upload.class';
+import { UploadcareFilesWrapper } from './files/files.class.js';
+import { UploadWrapper } from './upload/upload.class.js';
 
 export class Uploadcare {
 

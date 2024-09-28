@@ -1,1 +1,1 @@
-export { Uploadcare } from './uploadcare';
+export { Uploadcare } from './uploadcare.js';

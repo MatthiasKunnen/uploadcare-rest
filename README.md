@@ -6,6 +6,10 @@ The library is written in TypeScript and has typings available.
 
 The methods will be implemented gradually.
 
+Versions:
+- ^1.0.0, CommonJS, Node >= 6
+- ^2.0.1, CommonJS and ESModules, Node >= 18
+
 ## Currently implemented
 
 ### Files

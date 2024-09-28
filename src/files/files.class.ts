@@ -1,11 +1,11 @@
 import { AxiosInstance, AxiosPromise } from 'axios';
 
-import { UploadImageResult } from '../uploadcare.interface';
-import {
+import type { UploadImageResult } from '../uploadcare.interface.js';
+import type {
     CopyOptions,
     CopyResult,
     StoreResult,
-} from './files.interface';
+} from './files.interface.js';
 
 /**
  * This class takes care of all /files methods.

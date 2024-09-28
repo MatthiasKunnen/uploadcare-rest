@@ -134,7 +134,6 @@ rules:
     options:
       - allow-single-concat
   prefer-while: true
-  promise-function-async: true
   quotemark:
     options:
       - single
